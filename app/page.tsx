@@ -22,7 +22,7 @@ const blogPreviews = [
     excerpt:
       "A complete guide for Canadian businesses covering MOQs, shipping modes, tariff codes, and how to avoid common costly mistakes.",
     category: "China Sourcing",
-    date: "Feb 10, 2026",
+    date: "Jan 15, 2025",
     readTime: "8 min read",
   },
   {
@@ -31,7 +31,7 @@ const blogPreviews = [
     excerpt:
       "Pakistan excels in textiles, surgical instruments, sporting goods and more. Here's what Canadian retailers should be importing.",
     category: "Pakistan Sourcing",
-    date: "Jan 28, 2026",
+    date: "Dec 3, 2024",
     readTime: "6 min read",
   },
   {
@@ -40,7 +40,7 @@ const blogPreviews = [
     excerpt:
       "Why Turkey is an underrated sourcing destination: EU-quality goods, faster shipping than Asia, and competitive pricing.",
     category: "Turkey Sourcing",
-    date: "Jan 15, 2026",
+    date: "Nov 18, 2024",
     readTime: "5 min read",
   },
 ];

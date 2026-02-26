@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "A complete guide for Canadian businesses covering MOQs, shipping modes, tariff codes, quality control, and how to avoid the most common costly mistakes when importing from China.",
     category: "China Sourcing",
-    date: "February 10, 2026",
+    date: "January 15, 2025",
     readTime: "8 min read",
     author: "Ahmed Karimi",
     authorInitials: "AK",
@@ -177,7 +177,7 @@ Importing cheaply from China in 2026 is very achievable — but it requires prep
     excerpt:
       "Pakistan excels in textiles, surgical instruments, sporting goods and more. Here's what Canadian retailers and businesses should be importing from this underrated sourcing destination.",
     category: "Pakistan Sourcing",
-    date: "January 28, 2026",
+    date: "December 3, 2024",
     readTime: "6 min read",
     author: "Zara Mirza",
     authorInitials: "ZM",
@@ -313,7 +313,7 @@ The most reliable approach is working with a sourcing agent who has established 
     excerpt:
       "Why Turkey is an underrated sourcing destination: EU-quality goods, faster shipping than Asia, and pricing that beats European alternatives by 20–40%.",
     category: "Turkey Sourcing",
-    date: "January 15, 2026",
+    date: "November 18, 2024",
     readTime: "5 min read",
     author: "Daniel Tremblay",
     authorInitials: "DT",

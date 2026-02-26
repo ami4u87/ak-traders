@@ -12,6 +12,7 @@ type FormData = {
   country: string;
   product: string;
   quantity: string;
+  targetPrice: string;
   message: string;
 };
 
@@ -160,6 +161,18 @@ export default function QuoteForm() {
             {...register("quantity")}
           />
         </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+          Target Price per Unit <span className="text-gray-400 font-normal">(optional)</span>
+        </label>
+        <input
+          type="text"
+          placeholder="e.g. Under $5 CAD per unit, $2–3 USD FOB"
+          className="input-field"
+          {...register("targetPrice")}
+        />
       </div>
 
       <div>

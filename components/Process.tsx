@@ -1,4 +1,7 @@
+"use client";
+
 import { Search, MessageSquare, CheckSquare, Package, Truck, FileCheck, DollarSign } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -55,7 +58,6 @@ export default function Process() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container-section">
-        {/* Header */}
         <div className="text-center mb-14">
           <span className="badge mb-3">How It Works</span>
           <h2 className="section-title">Our 8-Step Sourcing Process</h2>
@@ -65,33 +67,31 @@ export default function Process() {
           </p>
         </div>
 
-        {/* Steps grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map(({ icon: Icon, step, title, desc }) => (
-            <div
+          {steps.map(({ icon: Icon, step, title, desc }, i) => (
+            <motion.div
               key={step}
               className="relative bg-white rounded-2xl p-6 border-2 border-gray-200
                          hover:border-brand-500 hover:shadow-xl hover:-translate-y-1
                          transition-all duration-200 group"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: (i % 4) * 0.08 }}
             >
-              {/* Step number badge — always visible */}
               <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
                 {step}
               </div>
-
-              {/* Icon — solid blue so it stands out */}
               <div className="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center mb-4
                               shadow-md group-hover:bg-brand-700 transition-colors duration-200">
                 <Icon size={22} className="text-white" />
               </div>
-
               <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Timeline note — stronger background so it reads on gray section */}
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-3 bg-brand-700 text-white rounded-full px-6 py-3 text-sm font-medium shadow-md">
             <span>⏱</span>
