@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply text-gray-800 bg-white font-sans; }
+  h1, h2, h3, h4, h5, h6 { @apply font-semibold leading-tight; }
+}
+
+@layer components {
+  /* ── Button structure (layout/spacing via @apply — utilities can still
+     override padding on individual buttons) ─────────────────────────── */
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent,
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg
+           transition-all duration-200 cursor-pointer no-underline;
+  }
+
+  /* ── Badge structure ──────────────────────────────────────────────── */
+  .badge {
+    @apply inline-block text-sm font-semibold px-3 py-1 rounded-full;
+  }
+
+  /* ── Card ─────────────────────────────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-200 p-6
+           transition-all duration-200;
+  }
+
+  /* ── Input ────────────────────────────────────────────────────────── */
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg bg-white
+           text-gray-800 placeholder-gray-400 transition-all duration-200;
+  }
+  .input-field:focus {
+    @apply outline-none border-transparent;
+    box-shadow: 0 0 0 2px #3b82f6;
+  }
+
+  /* ── Layout ───────────────────────────────────────────────────────── */
+  .container-section { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* ── Typography ───────────────────────────────────────────────────── */
+  .section-title    { @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4; }
+  .section-subtitle { @apply text-lg text-gray-600 max-w-2xl mx-auto; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COLOR declarations — outside any @layer so they have higher cascade
+   priority than ALL Tailwind layers. !important prevents utility classes
+   on individual elements (text-sm, py-2, etc.) from accidentally wiping
+   background/text colors.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Primary: blue fill ──────────────────────────────────────────────── */
+.btn-primary {
+  background-color: #2563eb !important;
+  color:            #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);
+}
+.btn-primary:hover {
+  background-color: #1d4ed8 !important;
+  color:            #ffffff !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+  transform: translateY(-2px);
+}
+
+/* ── Secondary: white outlined ───────────────────────────────────────── */
+.btn-secondary {
+  background-color: #ffffff !important;
+  color:            #1d4ed8 !important;
+  border:           2px solid #2563eb !important;
+}
+.btn-secondary:hover {
+  background-color: #eff6ff !important;
+  color:            #1d4ed8 !important;
+  transform: translateY(-2px);
+}
+
+/* ── Accent: amber fill ──────────────────────────────────────────────── */
+.btn-accent {
+  background-color: #f59e0b !important;
+  color:            #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);
+}
+.btn-accent:hover {
+  background-color: #d97706 !important;
+  color:            #ffffff !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+  transform: translateY(-2px);
+}
+
+/* ── Ghost: transparent with white border (for dark backgrounds) ─────── */
+.btn-ghost {
+  background-color: transparent !important;
+  color:            #ffffff !important;
+  border:           2px solid #ffffff !important;
+}
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color:            #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* ── Badge color ─────────────────────────────────────────────────────── */
+.badge {
+  background-color: #2563eb !important;
+  color:            #ffffff !important;
+}
+
+/* ── Card hover border ───────────────────────────────────────────────── */
+.card:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+  transform: translateY(-4px);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 3px; }
+
+/* ── Dropdown animation ──────────────────────────────────────────────── */
+.dropdown-enter { animation: dropdownFade 0.18s ease-out; }
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
