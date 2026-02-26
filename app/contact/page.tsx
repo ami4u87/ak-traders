@@ -108,24 +108,18 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              {/* Map embed placeholder */}
-              <div className="rounded-xl overflow-hidden border border-gray-200 h-52 bg-gray-100 flex items-center justify-center">
-                {/*
-                  Replace the div below with an actual Google Maps embed:
-                  <iframe
-                    src="https://maps.google.com/maps?q=Winnipeg,Manitoba&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                */}
-                <div className="text-center text-gray-400">
-                  <MapPin size={32} className="mx-auto mb-2 text-gray-300" />
-                  <p className="text-sm font-medium text-gray-500">Winnipeg, MB, Canada</p>
-                  <p className="text-xs text-gray-400 mt-1">Map embed — add Google Maps iframe here</p>
-                </div>
+              {/* Map embed */}
+              <div className="rounded-xl overflow-hidden border border-gray-200 h-52">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84063.03796582483!2d-97.23993747460938!3d49.89539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea73b3d50d1a11%3A0xd3a21fdfd7f4210f!2sWinnipeg%2C%20MB!5e0!3m2!1sen!2sca!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="A.K. Traders Ltd — Winnipeg, Manitoba"
+                />
               </div>
 
               {/* Response promise */}
